@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF9B43AB-BFB5-4D9C-A6D9-7726432EE91F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Resources</RootNamespace>
+    <AssemblyName>Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Messages.Designer.cs" />
+    <Compile Include="Models\ActivationCode.Designer.cs" />
+    <Compile Include="Models\BaseEntity.Designer.cs" />
+    <Compile Include="Models\CourseDetail.Designer.cs" />
+    <Compile Include="Models\DiscountCode.Designer.cs" />
+    <Compile Include="Models\Order.Designer.cs" />
+    <Compile Include="Models\Product.Designer.cs" />
+    <Compile Include="Models\ProductGroup.Designer.cs" />
+    <Compile Include="Models\ProductType.Designer.cs" />
+    <Compile Include="Models\QuestionConversation.Designer.cs" />
+    <Compile Include="Models\Resource1.Designer.cs" />
+    <Compile Include="Models\Role.Designer.cs" />
+    <Compile Include="Models\SupportRequest.Designer.cs" />
+    <Compile Include="Models\SupportRequestType.Designer.cs" />
+    <Compile Include="Models\Text.Designer.cs" />
+    <Compile Include="Models\User.Designer.cs" />
+    <Compile Include="Models\VersionHistory.Designer.cs" />
+    <Compile Include="Models\VipPackage.Designer.cs" />
+    <Compile Include="Models\VipPackageFeature.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Messages.resx" />
+    <EmbeddedResource Include="Models\ActivationCode.resx" />
+    <EmbeddedResource Include="Models\BaseEntity.resx" />
+    <EmbeddedResource Include="Models\CourseDetail.resx" />
+    <EmbeddedResource Include="Models\DiscountCode.resx" />
+    <EmbeddedResource Include="Models\Order.resx" />
+    <EmbeddedResource Include="Models\Product.resx" />
+    <EmbeddedResource Include="Models\ProductGroup.resx" />
+    <EmbeddedResource Include="Models\ProductType.resx" />
+    <EmbeddedResource Include="Models\QuestionConversation.resx" />
+    <EmbeddedResource Include="Models\Resource1.resx" />
+    <EmbeddedResource Include="Models\Role.resx" />
+    <EmbeddedResource Include="Models\SupportRequest.resx" />
+    <EmbeddedResource Include="Models\SupportRequestType.resx" />
+    <EmbeddedResource Include="Models\Text.resx" />
+    <EmbeddedResource Include="Models\User.resx" />
+    <EmbeddedResource Include="Models\VersionHistory.resx" />
+    <EmbeddedResource Include="Models\VipPackage.resx" />
+    <EmbeddedResource Include="Models\VipPackageFeature.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

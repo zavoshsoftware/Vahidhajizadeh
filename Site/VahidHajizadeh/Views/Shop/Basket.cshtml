@@ -1,0 +1,132 @@
+﻿@model ViewModels.BasketViewModel
+@{
+		ViewBag.Title = "سبد خرید";
+}
+
+<div class="tg-banner tg-haslayout parallax-window" data-parallax="scroll" data-bleed="100" data-speed="0.2" data-image-src="/images/header.jpg">
+	<div class="tg-displaytable">
+		<div class="tg-displaytablecell">
+			<div class="container">
+				<h3>سبد خرید</h3>
+				<ol class="tg-breadcrumb">
+					<li><a href="#">خانه</a></li>
+
+					<li>سبد خرید</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+
+<main class="main-content tg-haslayout">
+	<div id="tg-two-columns" class="tg-two-columns tg-haslayout">
+		<div class="container">
+
+
+			<div class="checkout">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="block-form register">
+							<h3 class="form-heading">اطلاعات کاربری</h3>
+							<div class="row">
+
+								<div class="col-sm-6">
+									<p><input id="txtCellNumber" type="text" placeholder="تلفن همراه *"></p>
+								</div>
+								<div class="col-sm-6">
+									<p><input type="text" id="txtFullName" placeholder="نام و نام خانوادگی *"></p>
+								</div>
+							</div>
+							
+							@if (Model.IsPhysicalProduct)
+							{
+								<div class="row">
+									<div class="col-sm-6">
+										<p><input id="txtCity" type="text" placeholder="شهر *">
+										</p>
+									</div>
+									<div class="col-sm-6">
+										<p><input type="text" id="txtPostal" placeholder="کد پستی">
+										</p>
+									</div>
+								</div>
+							<div class="row">
+									<div class="col-sm-12">
+										<p><input id="txtAddress" type="text" style="width: 99%" placeholder="آدرس *">
+										</p>
+									</div>
+								</div>
+							}
+
+							<div class="row">
+								<div class="col-sm-6">
+									<p><input type="text" id="txtCompany" placeholder="نام مجموعه"></p>
+								</div>
+
+								<div class="col-sm-6">
+									<p><input type="text" id="txtEmail" placeholder="ایمیل"></p>
+								</div>
+							</div>
+							<button id="btn-register" class="button primary" onclick="registerUser(@Model.IsPhysicalProduct);">پرداخت</button>
+							<p class="alert alert-info" id="transfer-message">در حال پردازش اطلاعات ...</p>
+							<p class="alert alert-danger" id="error-box"></p>
+
+						</div>
+						<div class="block-form activate">
+							<h3 class="form-heading">تایید تلفن همراه</h3>
+							<div class="row">
+
+								<div class="col-sm-12">
+									<p class="alert alert-info">کد فعال سازی برای شما از طریق پیامک ارسال شد. <a href="#" onclick="changeCellNum();">تغییر شماره موبایل</a></p>
+									<p>
+										<input id="txtActivationCode" type="text" placeholder="کد فعال سازی *">
+									</p>
+								</div>
+
+							</div>
+
+							<p class="alert alert-danger" id="error-box2"></p>
+							<button id="btn-finalize" class="button primary" onclick="FinalizeOrder();">پرداخت</button>
+							<p class="alert alert-info" id="transfer-message2"> در حال انتقال به درگاه پرداخت بانکی</p>
+
+						</div>
+
+					</div>
+					<div class="col-sm-6">
+						<div class="block-form order-review">
+							<h3 class="form-heading">سفارش شما</h3>
+							<table class="shop_table">
+								<thead>
+									<tr>
+										<th class="product-name">محصول</th>
+										<th class="product-total">قیمت</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach (var product in Model.Products)
+										{
+											<tr>
+												@*<td class="product-name"><i class="fa fa-remove"></i></td>*@
+												<td class="product-name">@product.Product.Title</td>
+												<td class="product-total"><span class="amount">@product.RowAmount</span></td>
+											</tr>
+										}
+
+								</tbody>
+								<tfoot>
+									<tr class="cart-subtotal">
+										<th>جمع کل</th>
+										<td><span class="amount">@Model.SubTotal</span></td>
+									</tr>
+
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</main>

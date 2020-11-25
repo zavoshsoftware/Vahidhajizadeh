@@ -1,0 +1,81 @@
+/* Theme transition Effect */
+*:after,
+*:before,
+a,
+.button,
+.tg-btn,
+.tg-btn:after,
+.tg-twopostcontent ul li a span,
+.tg-twopostcontent ul li a i,
+.owl-theme .owl-controls.clickable .owl-buttons div,
+.tg-videotabs figure .tg-imghover,
+.tg-socialicons li a,
+.tg-catagorieswidget ul li a em,
+.tg-catagorieswidget ul li a i,
+.tg-colorwidget ul li a em,
+.tg-colorwidget ul li a i,
+.tg-previouspost .tg-preimage span,
+.tg-previouspost .tg-preimage span i,
+.tg-nextpost .tg-nextimage span,
+.tg-nextpost .tg-nextimage span i,
+.tg-author-head .tg-author-right .tg-socialicons li a i,
+.tg-products .tg-product .tg-producthover,
+.tg-product .tg-producthover ul li a,
+.tg-wishlist-widget ul li figure .tg-producthover,
+.tg-quantity-adtocart i,
+.tg-navigation > ul > li a,
+.tg-navigation > ul > li ul,
+.tg-nav .navbar-toggle .icon-bar,
+.tg-navigation.greedy .links li:last-child .tg-dropdown,
+.tg-social-progress li.twiiter,
+.tg-social-progress li.twiiter i,
+.tg-social-progress li.twiiter span,
+.tg-social-progress li.twiiter strong,
+.tg-social-progress li.facebook,
+.tg-social-progress li.facebook i,
+.tg-social-progress li.facebook span,
+.tg-social-progress li.facebook strong,
+.tg-social-progress li.pinterest,
+.tg-social-progress li.pinterest i,
+.tg-social-progress li.pinterest span,
+.tg-social-progress li.pinterest strong,
+.tg-banner-3 .tg-banner-content .tg-banner3-hover,
+.tg-technologypost .tg-nav-tabs > li .tg-postdetail h3
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.tg-post .tg-smallpost img
+{
+	-webkit-transition: all 3000ms ease-in-out;
+	-moz-transition: all 3000ms ease-in-out;
+	-ms-transition: all 3000ms ease-in-out;
+	-o-transition: all 3000ms ease-in-out;
+	transition: all 3000ms ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+

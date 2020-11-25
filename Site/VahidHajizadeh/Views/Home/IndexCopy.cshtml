@@ -1,0 +1,167 @@
+﻿@model ViewModels.HomeViewModel
+@{
+    ViewBag.Title = "وب سایت رسمی وحید حاجی زاده | مستر کار ایران";
+}
+
+ 
+<!-- Slide show -->
+<div class="slide-home1">
+	<div class="slide-container">
+		<img src="/images/sliders/slider1.jpg" alt="">
+		<img src="/images/sliders/slider2.jpg" alt="">
+ 
+	</div>
+	<div class="thumbs">
+		<a data-slide-index="0" href=""><img src="/images/sliders/slider-thumb1.jpg" alt="" /></a>
+		<a data-slide-index="1" href=""><img src="/images/sliders/slider-thumb2.jpg" alt="" /></a>
+	</div>
+</div>
+<!-- ./Slide show -->
+<!-- promotions -->
+<div class="margin-top-60">
+	<div class="container">
+		<div class="row margin-0">
+			<div class="col-sm-12 col-md-4 padding-0 wow fadeInLeft">
+				<div class="kt-banner block-banner-text margin-bottom-30" data-height="214" data-background="/images/banners/banner1.jpg" data-positionleft="30px" data-verticalmiddle="middle">
+					<a href="/product/کتاب-مدیریت-سالن-های-زیبایی-جلد-دوم" class="bg-image">Banner Bg</a>
+					<div class="content">
+				 
+						<a class="link-more" href="/product/کتاب-مدیریت-سالن-های-زیبایی-جلد-دوم"><i class="fa fa-long-arrow-left"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-4 padding-0 wow fadeInUp">
+				<div class="kt-banner block-banner-text white margin-bottom-30" data-height="214" data-background="/images/banners/banner2.jpg" data-positionleft="30px" data-verticalmiddle="middle">
+					<a href="/product/پکیج-کامل-قراردادها-و-فرم-های-پرسنلی-سا" class="bg-image">Banner Bg</a>
+					<div class="content">
+					 
+						<a class="link-more" href="/product/پکیج-کامل-قراردادها-و-فرم-های-پرسنلی-سا"><i class="fa fa-long-arrow-left"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-4 padding-0 wow fadeInRight">
+				<div class="kt-banner block-banner-text margin-bottom-30" data-height="214" data-background="/images/banners/banner3.jpg" data-positionleft="30px" data-verticalmiddle="middle">
+					<a href="/product/کتاب-قانون-کار-در-نظم-حقوقی-کنونی" class="bg-image">Banner Bg</a>
+					<div class="content">
+		 
+						<a class="link-more" href="/product/کتاب-قانون-کار-در-نظم-حقوقی-کنونی"><i class="fa fa-long-arrow-left"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="heading-section text-center padding-setting-1 wow fadeInLeft bg-gray">
+	<h3 class="title">محصولات ویژه</h3>
+</div>
+<div class="section-our-product wow fadeInUp bg-gray">
+	<div class="container">
+		<ul class="products product-list-grid desktop-columns-4 tablet-columns-3 mobile-columns-1 owl-carousel-mobile" data-nav="false" data-dots="false" data-margin="20" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"2"},"992":{"items":"3"}}'>
+			
+			
+			@foreach (var product in Model.HomeProduct)
+			{
+				
+	
+			<li class="product-item style2 col-md-3 col-sm-4 col-xs-12 item-owl-mobile">
+				<div class="product-inner">
+					<div class="thumb has-second-image">
+						<a href="/product/@product.UrlParam">
+							<img src="@product.ImageUrl" alt="@product.Title">
+						</a>
+			 
+				 
+				 
+					</div>
+					<div class="info">
+						<h3 class="product-name short"><a href="/product/@product.UrlParam">@product.Title</a></h3>
+						@if (product.IsInPromotion)
+						{
+							<span class="price"><del>@product.AmountStr تومان</del> <ins>@product.DiscountAmountStr تومان</ins></span>
+						}
+						else
+						{
+							<span class="price"> @product.AmountStr تومان</span>
+
+						}
+					</div>
+				</div>
+			</li>
+			}
+		</ul>
+	</div>
+</div>
+<!-- ./List product -->
+<!-- Section Services -->
+<div class="section-services bg-parallax">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-4">
+				<div class="box-icon margin-bottom-80 wow zoomInUp">
+					<div class="icon">
+						<span class="icon-font flaticon-label36"></span>
+					</div>
+					<div class="box-content">
+						<h3 class="title">مشاوره در زمینه قوانین کار</h3>
+						<span class="subtitle">مشاور بیش از 100 برند مطرح ایرانی</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-4">
+				<div class="box-icon margin-bottom-80 wow zoomInUp">
+					<div class="icon">
+						<span class="icon-font flaticon-mappoint6"></span>
+					</div>
+					<div class="box-content">
+						<h3 class="title">آموزش روابط کار</h3>
+						<span class="subtitle">برگزاری دوره های آموزشی قوانین تامین اجتماعی</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-4">
+				<div class="box-icon margin-bottom-80 wow zoomInUp">
+					<div class="icon">
+						<span class="icon-font flaticon-speech102"></span>
+					</div>
+					<div class="box-content">
+						<h3 class="title">برگزاری کنفرانس</h3>
+						<span class="subtitle">برگزار کننده بیش از 10 کنفرانس در حوزه قوانین کسب و کار</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="heading-section text-center margin-top-85 wow fadeInLeft">
+	<h3 class="title">آخرین مطالب وبلاگ</h3>
+</div>
+<div class="section-last-test-blog margin-bottom-90 wow zoomIn">
+	<div class="container">
+		<div class="lasttest-blog owl-carousel nav-center nav-style-1" data-thumbs="false" data-margin="25" data-loop="true" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"2"},"992":{"items":"3"}}'>
+		
+			@foreach (var blog in Model.Blogs)
+			{
+				
+			<article class="item-blog">
+				<div class="post-thumb">
+					<a href="/blog/post/@blog.UrlParam"><img src="@blog.ImageUrl" alt="@blog.Title"></a>
+				</div>
+				<div class="blog-info">
+					<h3 class="title"><a href="/blog/post/@blog.UrlParam">@blog.Title</a></h3>
+					<span class="date">@blog.CreationDateStr</span>
+				</div>
+				<div class="blog-buttom">
+		 
+					<a href="/blog/post/@blog.UrlParam" class="button">ادامه مطلب</a>
+				</div>
+			</article>
+			}
+	 
+		</div>
+	</div>
+</div>
+ 

@@ -1,0 +1,107 @@
+/****** Theme Color color ***********************************************************
+*********************************************************** Theme Color color ******/
+a:hover,
+.tg-btn,
+.top-left-side ul li a:hover,
+.register-popup li a:hover,
+.menu-item-button a:hover i,
+.search-bar-button,
+.register-popup li a:hover i,
+.tg-navigation.greedy .links li a:hover,
+.tg-navigation.greedy .links li.active > a,
+.accordion-toggle:after,
+.rankig-star li,
+.catagories-list li:hover span,
+.tg-navtabs li.active .tg-postcontent .tg-postheading h3,
+.tg-twopostcontent ul li:hover a span,
+.tg-col .tg-postheading h2 span,
+.tg-footer-nav ul li a:hover,
+.tg-catagorieswidget ul li a:hover em,
+.tg-catagorieswidget ul li a:hover i,
+.tg-colorwidget ul li a:hover em,
+.tg-colorwidget ul li a:hover i,
+.tg-tags-socials .tg-socialicons li a:hover,
+.tg-previouspost .tg-preimage:hover span,
+.tg-previouspost .tg-preimage:hover span i,
+.tg-nextpost .tg-nextimage:hover span,
+.tg-nextpost .tg-nextimage:hover span i,
+.tg-author-head .tg-author-right .tg-socialicons li a:hover i,
+.tg-comming-countdown li span,
+.tg-shop .tg-product-info span,
+.tg-product .tg-producthover ul li a:hover,
+.tg-wishlist-widget .tg-product-info h3 a,
+.tg-wishlist-widget .tg-product-info em,
+.tg-price p,
+.tg-product-votes span,
+.tg-quantity-adtocart i:hover,
+.tg-404error2 .tg-404content h2,
+.tg-rightpost-slider .swiper-slide-active .tg-postheading h3,
+.slides > div .banner-content .tg-postmata i,
+nav.greedy ul.hidden-links > li.active > a,
+nav.greedy ul.hidden-links li .tg-dropdown li.active a,
+.sliderkit-panel-text .tg-postmata li a i,
+.tg-homebanner .sliderkit-panel-text .tg-postmata li > a i,
+.tg-navigation .search-bar-button,
+.photosgallery-vertical .sliderkit-nav-clip ul li.sliderkit-selected .related-post-detail h3,
+.tg-panel-group .panel-title [aria-expanded="true"]:after,
+.tg-technologypost .tg-nav-tabs > li:hover .tg-postdetail h3,
+.tg-technologypost .tg-nav-tabs > li.active .tg-postdetail h3
+/*  Theme Color */
+{ color: #1D5081;}
+.cart-icon:hover{ color: #1D5081 !important;}
+
+/* Theme Backgroung Color */
+.tg-btn:after,
+.cart-no-batch,
+.live-weather,
+.tg-navigation.greedy .links li .tg-dropdown li:after,
+.tg-socialicons li a:hover,
+#thumbnail-slider ul li.active::before,
+.top-news-tabs li.active a,
+.tg-mostviewdslider .owl-page.active span,
+.tg-postslider .owl-pagination .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-buttons div:hover,
+.tg-cols .tg-scroltop,
+.tg-downloadbuttons .tg-btn:hover,
+.tg-review-tabs .tg-nav-tabs li .tg-btn:hover,
+.tg-review-tabs .tg-nav-tabs li.active .tg-btn,
+#tg-search .close,
+.tg-navigation > ul > li ul li a:after,
+.tg-nav .navbar-toggle:hover .icon-bar,
+nav.greedy button,
+nav.greedy ul.hidden-links > li.active:after,
+.tg-producthover ul li:hover i
+
+
+
+
+{ background: #1D5081;}
+.tg-producthover ul li:hover{background:  rgba(241, 59, 59, 0.50);}
+
+
+/* Theme Border Color */
+h2,
+.tg-btn,
+.tg-btn:hover,
+.tg-sectionheading,
+.caret-down,
+.tg-postslider .owl-pagination .owl-page span,
+.tg-mostviewdslider .owl-pagination .owl-page span,
+.tg-downloadbuttons .tg-btn:hover,
+.tg-quantity-adtocart i:hover,
+.photosgallery-vertical .sliderkit-nav-clip ul li.sliderkit-selected a
+{ border-color: #1D5081;}
+nav.greedy ul.hidden-links > li.active:before,
+.tg-navigation.greedy .links li .tg-dropdown:after,
+.tg-navigation.greedy .links li:last-child .tg-dropdown:after,
+.tg-sectionheading:after{border-bottom-color: #1D5081;}
+.tg-gallarytabs li.active{border-left-color: #1D5081;}
+.tg-navigation.greedy .links li .tg-dropdown,
+nav.greedy ul.hidden-links > li + li,
+.tg-threecolumns
+
+
+
+
+
+{border-top-color: #1D5081;}

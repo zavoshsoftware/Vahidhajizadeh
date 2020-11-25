@@ -1,0 +1,46 @@
+﻿@model ViewModels._BaseViewModel
+		
+
+<header id="header" class="main-header tg-haslayout">
+	<div class="container">
+		<div class="logo-holder">
+			<strong><a href="/"><img src="/images/logo.png" height="52px" alt="وحید حاجی زاده"></a></strong>
+		</div>
+		<nav class="tg-navigation greedy theme-shadow">
+			<ul class="links">
+				<li class="active">
+					<a href="/">خانه</a>
+				</li>
+				<li>
+					<a href="#">وبلاگ</a>
+					<ul class="tg-dropdown">
+						@foreach (var cat in Model.MenuBlogGroups)
+						{
+								<li><a href="/blog/category/@cat.UrlParam">@cat.Title</a></li>
+						}
+					</ul>
+				</li>
+				<li>
+					<a href="#">محصولات</a>
+					<ul class="tg-dropdown">
+						@foreach (var cat in Model.MenuProductGroups)
+						{
+							<li><a href="/category/@cat.UrlParam">@cat.Title</a></li>
+						}
+					 
+					</ul>
+				</li>
+				<li>
+					<a href="/service">خدمات</a>
+
+				</li>
+				<li><a href="/about">درباره من</a></li>
+				<li><a href="/contact">تماس با من</a></li>
+
+			</ul>
+			<button><i class="fa fa-navicon"></i></button>
+			<ul class="hidden-links hidden"></ul>
+
+		</nav>
+	</div>
+</header>

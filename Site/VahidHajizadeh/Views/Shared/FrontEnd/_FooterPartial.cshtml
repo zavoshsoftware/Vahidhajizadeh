@@ -1,0 +1,133 @@
+﻿@model ViewModels._BaseViewModel
+
+
+<footer id="footer" class="tg-haslayout">
+	<div class="tg-threecolumns">
+		<div class="container">
+			<div class="row">
+				<div class="tg-cols tg-haslayout">
+					<a class="tg-scroltop" href="#"><i class="fa fa-angle-up"></i></a>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="tg-col tg-haslayout">
+							<div class="tg-postheading">
+								<h2>درباره وحید حاجی زاده</h2>
+							</div>
+							<div class="tg-footerabout">
+								<p>
+									وحید حاجی زاده نویسنده و مولف کتاب قانون کار است که به عنوان مشاور ارشد حوزه روابط کار شرکتها و سازمانها بیش از 10 سال فعالیت مشاوره ای در حوزه های قانون کار، امور قراردادها، منابع انسانی، و مسئولیتهای حقوقی مدیران در کسب و کارهای گوناگون داشته است . سخنرانی در ده ها همایش ، سمینار و کنفرانس از رزومه های بارز وحیدحاجی زاده میباشد .
+								</p>
+								<div class="tg-followus">
+									<h2>من را دنبال کنید</h2>
+								</div>
+								<ul class="tg-socialicons">
+									<li><a href="https://www.instagram.com/hajizadeh_vahid/"><i class="fa fa-instagram"></i></a></li>
+									<li><a href="http://instagram.com/vahid_hajizadeh_adviser"><i class="fa fa-instagram"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="tg-col tg-haslayout">
+							<div class="tg-postheading">
+								<h2>آخرین مطالب سایت</h2>
+							</div>
+							<div class="tg-todaycomment">
+								<ul class="tg-todaycomments">
+							
+									@foreach (var blog in Model.footerBlogs)
+									{
+										<li>
+
+											<div class="tg-postbottomcontent">
+												<h3><a href="/blog/post/@blog.UrlParam">@blog.Title</a></h3>
+												<ul class="tg-postmata">
+													<li>
+														<time datetime="2016-04-13">
+															<a href="#">
+																<i class="fa fa-clock-o"></i>
+																<em>@blog.CreationDateStr</em>
+															</a>
+														</time>
+													</li>
+													<li>
+														<a href="#">
+															<i class="fa fa-comments-o"></i>
+															<em>0</em>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+									}
+
+							
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-12 col-xs-12">
+						<div class="tg-col tg-haslayout">
+							<div class="tg-postheading">
+								<h2>ثبت درخواست مشاوره</h2>
+							</div>
+							<div class="tg-subscribe tg-haslayout">
+								<fieldset>
+									<div class="row">
+										<div class="col-sm-12">
+											<input type="text" placeholder="نام" class="form-control">
+										</div>
+										<div class="col-sm-12">
+											<input type="email" placeholder="شماره موبایل" class="form-control">
+										</div>
+										<div class="col-sm-12">
+											<button class="tg-btn" type="submit"><span>ثبت درخواست</span></button>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-12 col-xs-12">
+						<div class="tg-col tg-haslayout">
+							<div class="tg-postheading">
+								<h2>اطلاعات تماس</h2>
+							</div>
+									<div class=" contact-footer">
+										<ul>
+											<li><i class="fa fa-location-arrow"></i>تهران، خیابان شریعتی، سه راه طالقانی، جنب مبل پایتخت، پلاک 306، طبقه 2، واحد 4</li>
+											<li> <i class="fa fa-phone"></i>021-77515152</li>
+											<li><i class="fa fa-fax"></i>021-89784350</li>
+											<li><i class="fa fa-envelope"></i>info@vahidhajizadeh.com</li>
+											<li> <i class="fa fa-mobile"></i>پشتیبانی واتس اپ و تلگرام: 09025455416</li>
+										</ul>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tg-footerbar tg-haslayout">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="tg-footer-nav pull-left">
+						<ul>
+							<li><a href="#">خانه</a></li>
+							<li><a href="#">درباره من</a></li>
+							<li><a href="#">وبلاگ</a></li>
+							<li><a href="#">تماس با من</a></li>
+						</ul>
+					</div>
+					<p class="tg-copyrights pull-right">
+						طراحی وب سایت و سئو توسط
+						<a href="https://zavoshsoftware.com" target="_blank">زاوش</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
