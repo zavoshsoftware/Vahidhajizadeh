@@ -629,6 +629,17 @@
     <Content Include="images\img-pre.jpg" />
     <Content Include="images\instagram-banner.jpg" />
     <Content Include="images\logo.png" />
+    <Content Include="images\main-slider\slider1\slide1.jpg" />
+    <Content Include="images\main-slider\slider1\slide2.jpg" />
+    <Content Include="images\main-slider\slider1\slide3.jpg" />
+    <Content Include="images\main-slider\slider2\banner1-1.png" />
+    <Content Include="images\main-slider\slider2\banner2-1.png" />
+    <Content Include="images\main-slider\slider2\banner2-2.png" />
+    <Content Include="images\main-slider\slider2\banner2-3.png" />
+    <Content Include="images\main-slider\slider2\banner3-1.png" />
+    <Content Include="images\main-slider\slider2\slide1.jpg" />
+    <Content Include="images\main-slider\slider2\slide2.jpg" />
+    <Content Include="images\main-slider\slider2\slide3.jpg" />
     <Content Include="images\most-viwed\img-01.jpg" />
     <Content Include="images\most-viwed\img-02.jpg" />
     <Content Include="images\most-viwed\img-03.jpg" />
@@ -1019,6 +1030,9 @@
     <Content Include="fonts\Pe-icon-7-stroke.ttf" />
     <Content Include="fonts\Pe-icon-7-stroke.woff" />
     <Content Include="images\Thumbs.db" />
+    <Content Include="images\main-slider\slider1\Thumbs.db" />
+    <Content Include="images\main-slider\slider2\Thumbs.db" />
+    <Content Include="images\main-slider\Thumbs.db" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\kendo\2017.3.913\kendo.all-vsdoc.js" />
     <None Include="Scripts\kendo\2017.3.913\kendo.all.min.intellisense.js" />

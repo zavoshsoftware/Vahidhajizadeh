@@ -1,46 +1,45 @@
 ﻿@model ViewModels.HomeViewModel
 
 @{
-	ViewBag.Title = "وب سایت رسمی وحید حاجی زاده";
-}
+		ViewBag.Title = "وب سایت رسمی وحید حاجی زاده";
+} 
 
+	<div class="sliderkit photosgallery-vertical">
+	<div class="">
+			<div class="tg-slider-navigation">
+				<div class="sliderkit-nav">
+					<div class="sliderkit-nav-clip">
+						<ul>
+							@foreach (var slider in Model.Sliders)
+							{
 
-		<div class="sliderkit photosgallery-vertical">
-			<div class="">
-				<div class="tg-slider-navigation">
-					<div class="sliderkit-nav">
-						<div class="sliderkit-nav-clip">
-							<ul>
-								@foreach (var slider in Model.Sliders)
-								{
-
-										<li>
-											<a href="#" rel="nofollow" title="[link title]">
-												<img src="@slider.ThumbImageUrl" alt="@slider.Title">
-											</a>
-											<div class="related-post-detail">
-												<h3>@slider.Title</h3>
-												<div class="tg-time-date">
-													<time datetime="2016-04-21">@slider.CreationDateStr</time>
-												</div>
+									<li>
+										<a href="#" rel="nofollow" title="[link title]">
+											<img src="@slider.ThumbImageUrl" alt="@slider.Title">
+										</a>
+										<div class="related-post-detail">
+											<h3>@slider.Title</h3>
+											<div class="tg-time-date">
+												<time datetime="2016-04-21">@slider.CreationDateStr</time>
 											</div>
-										</li>
-							 
-								}
+										</div>
+									</li>
+
+							}
 
 
 
-							</ul>
-						</div>
-						<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-prev">
-							<a class="fa fa-chevron-up" rel="nofollow" href="#" title="Previous line"><span>Previous</span></a>
-						</div>
-						<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-next">
-							<a class="fa fa-chevron-down" rel="nofollow" href="#" title="Next line"><span>Next</span></a>
-						</div>
+						</ul>
+					</div>
+					<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-prev">
+						<a class="fa fa-chevron-up" rel="nofollow" href="#" title="Previous line"><span>Previous</span></a>
+					</div>
+					<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-next">
+						<a class="fa fa-chevron-down" rel="nofollow" href="#" title="Next line"><span>Next</span></a>
 					</div>
 				</div>
 			</div>
+		</div>
 			<div class="sliderkit-panels">
 
 				@foreach (var slider in Model.Sliders)
@@ -48,179 +47,177 @@
 
 						<a href="@slider.LandingPage">
 					<div class="sliderkit-panel">
-			
-						<img src="@slider.ImageUrl" alt="@slider.Title">
-						 
-						@*<div class="tg-banner-text tg-haslyout">
 
-							<h1>@slider.Summery</h1>
-							<a href="@slider.LandingPage">
-								<span class="post-batch technology">@slider.LinkTitle</span>
-							</a>
-						</div>*@
+						<img src="@slider.ImageUrl" class="slideImg" alt="@slider.Title">
+
 					</div>
-						</a> 
-					 
+						</a>
+
 				}
 			</div>
 		</div>
 
-		<main class="main-content tg-haslayout">
-			<div id="tg-two-columns" class="tg-two-columns tg-haslayout">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<div id="content" class="content tg-haslayout">
+<main class="main-content tg-haslayout">
+	<div id="tg-two-columns" class="tg-two-columns tg-haslayout">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div id="content" class="content tg-haslayout">
 
 
-								<section class="tg-technologypost tg-haslayout">
-									<div class="tg-sectionheading">
-										<h2>گروه های مطالب</h2>
-									</div>
-									<div class="tg-post">
-										<div id="tg-mostviewdslider" class="tg-mostviewdslider tg-haslayout">
+						<section class="tg-technologypost tg-haslayout">
+							<div class="tg-sectionheading">
+								<h2>گروه های مطالب</h2>
+							</div>
+							<div class="tg-post">
+								<div id="tg-mostviewdslider" class="tg-mostviewdslider tg-haslayout">
 
-											@foreach (var category in Model.SiteBlogCategories)
-											{
+									@foreach (var category in Model.SiteBlogCategories)
+									{
 
-													<div class="item">
-														<figure class="tg-smallpost">
-															<a href="/blog/category/@category.UrlParam"><img src="@category.ImageUrl" alt="@category.Title"></a>
-														</figure>
-														<div class="tg-postheading">
-															<h3>
-																<a href="/blog/category/@category.UrlParam">@category.Title</a>
-															</h3>
-														</div>
-													</div>
-}
-
-										</div>
-									</div>
-								</section>
-
-
-
-								<section class="tg-technologypost tg-haslayout">
-									<div class="tg-sectionheading">
-										<h2>آخرین مطالب</h2>
-									</div>
-									<div class="tg-post tg-haslayout">
-										<div class="row">
-											<div class="col-sm-6 pull-left">
-												<div class="tg-tab-content tab-content">
-
-													@foreach (var blog in Model.Blogs)
-													{
-														<div role="tabpanel" class="tab-pane" id="@blog.UrlParam">
-															<figure class="tg-smallpost">
-																<a href="/blog/post/@blog.UrlParam"><img alt="image description" src="@blog.ImageUrl"></a>
-																@*<span class="post-batch fashion">@blog.SiteBlogCategory.Title</span>*@
-															</figure>
-															<div class="tg-postheading">
-																<h3><a href="/blog/post/@blog.UrlParam"> @blog.Title</a></h3>
-															</div>
-															<ul class="tg-postmata">
-
-																<li>
-																	<time datetime="2016-04-13">
-																		<i class="fa fa-clock-o"></i>
-																		<em>@blog.CreationDateStr</em>
-																	</time>
-																</li>
-
-																<li>
-																	<i class="fa fa-comments-o"></i>
-																	<em>0</em>
-																</li>
-															</ul>
-															<div class="tg-description">
-																<p>@blog.Summery</p>
-															</div>
-														</div>
-
-														
-}
-
-
+											<div class="item">
+												<figure class="tg-smallpost">
+													<a href="/blog/category/@category.UrlParam"><img src="@category.ImageUrl" alt="@category.Title"></a>
+												</figure>
+												<div class="tg-postheading">
+													<h3>
+														<a href="/blog/category/@category.UrlParam">@category.Title</a>
+													</h3>
 												</div>
 											</div>
-											<div class="col-sm-6 col-xs-12 pull-right">
-												<div class="tg-nav-carasoul tg-haslayout">
-													<ul id="tg-technologypost" class="tg-nav-tabs nav-tabs tg-haslayout" role="tablist">
+									}
 
-														@foreach (var blog in Model.Blogs)
-														{
-															<li role="presentation" class="tab-selector">
-																<div class="item">
-																	<a href="#@blog.UrlParam" aria-controls="house" role="tab" data-toggle="tab">
-																		<figure>
-																			<img src="@blog.ImageUrl" alt="@blog.Title" height="70px">
-																		</figure>
-																		<div class="tg-postcontent">
-																			<div class="tg-postdetail">
-																				<div class="tg-postheading">
-																					<h3>@blog.Title</h3>
-																				</div>
-																			</div>
-																			<ul class="tg-postmata">
-																				<li>
-																					<time datetime="2016-04-13">
-																						<i class="fa fa-clock-o"></i>
-																						<em>@blog.CreationDateStr</em>
-																					</time>
-																				</li>
-																				<li>
-																					<i class="fa fa-comments-o"></i>
-																					<em>0</em>
-																				</li>
-																			</ul>
-																		</div>
-																	</a>
-																</div>
-															</li>
-														}
-													</ul>
-													<div class="text-right">
-													<a href="/blog" class="btn btn-success" style="margin-top: 15px;">آرشیو مطالب</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</section>
+								</div>
+							</div>
+						</section>
 
-								<div class="tg-contentadd">
-									<figure>
-										<a href="https://www.instagram.com/vahid_hajizadeh_adviser/" target="_blank"><img src="/images/instagram-banner.jpg" alt="اینستاگرام وحید حاجی زاده"></a>
-									</figure>
-								</div>
-							<section class="tg-posts tg-videopost tg-haslayout">
-								<div class="tg-sectionheading">
-									<h2>آخرین ویدیو ها</h2>
-								</div>
-								<div class="row no-gutters">
-									<div class="col-md-8 col-sm-7 col-xs-12">
-										<div class="row no-gutters">
-											<div class="tg-videocontent tab-content">
-													
-												@foreach (var video in Model.Videos)
+
+
+						<section class="tg-technologypost tg-haslayout">
+							<div class="tg-sectionheading">
+								<h2>آخرین مطالب</h2>
+							</div>
+							<div class="tg-post tg-haslayout">
+								<div class="row">
+							 
+									<div class="col-sm-6 col-xs-12 pull-right">
+										<div class="tg-nav-carasoul tg-haslayout">
+											<ul id="tg-technologypost" class="tg-nav-tabs nav-tabs tg-haslayout" role="tablist">
+
+												@foreach (var blog in Model.Blogs.Take(4))
 												{
+													<li class="tab-selector">
+														<div class="item">
+															<a href="/blog/post/@blog.UrlParam">
+																<figure>
+																	<img src="@blog.ImageUrl" alt="@blog.Title" height="70px">
+																</figure>
+																<div class="tg-postcontent">
+																	<div class="tg-postdetail">
+																		<div class="tg-postheading">
+																			<h3>@blog.Title</h3>
+																		</div>
+																	</div>
+																	<ul class="tg-postmata">
+																		<li>
+																			<time datetime="2016-04-13">
+																				<i class="fa fa-clock-o"></i>
+																				<em>@blog.CreationDateStr</em>
+																			</time>
+																		</li>
+																		<li>
+																			<i class="fa fa-comments-o"></i>
+																			<em>0</em>
+																		</li>
+																	</ul>
+																</div>
+															</a>
+														</div>
+													</li>
+												}
+											</ul>
+										
+										</div>
+									</div> 
+									<div class="col-sm-6 col-xs-12 pull-right">
+										<div class="tg-nav-carasoul tg-haslayout">
+											<ul id="tg-technologypost" class="tg-nav-tabs nav-tabs tg-haslayout" role="tablist">
+
+												@foreach (var blog in Model.Blogs.Skip(4).Take(4))
+												{
+													<li  class="tab-selector">
+														<div class="item">
+															<a href="/blog/post/@blog.UrlParam">
+																<figure>
+																	<img src="@blog.ImageUrl" alt="@blog.Title" height="70px">
+																</figure>
+																<div class="tg-postcontent">
+																	<div class="tg-postdetail">
+																		<div class="tg-postheading">
+																			<h3>@blog.Title</h3>
+																		</div>
+																	</div>
+																	<ul class="tg-postmata">
+																		<li>
+																			<time datetime="2016-04-13">
+																				<i class="fa fa-clock-o"></i>
+																				<em>@blog.CreationDateStr</em>
+																			</time>
+																		</li>
+																		<li>
+																			<i class="fa fa-comments-o"></i>
+																			<em>0</em>
+																		</li>
+																	</ul>
+																</div>
+															</a>
+														</div>
+													</li>
+												}
+											</ul>
+										 
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="text-center">
+										<a href="/blog" class="btn btn-success" style="margin-top: 15px;">آرشیو مطالب</a>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<div class="tg-contentadd">
+							<figure>
+								<a href="https://www.instagram.com/vahid_hajizadeh_adviser/" target="_blank"><img src="/images/instagram-banner.jpg" alt="اینستاگرام وحید حاجی زاده"></a>
+							</figure>
+						</div>
+						<section class="tg-posts tg-videopost tg-haslayout">
+							<div class="tg-sectionheading">
+								<h2>آخرین ویدیو ها</h2>
+							</div>
+							<div class="row no-gutters">
+								<div class="col-md-8 col-sm-7 col-xs-12">
+									<div class="row no-gutters">
+										<div class="tg-videocontent tab-content">
+
+											@foreach (var video in Model.Videos)
+											{
 													<div role="tabpanel" class="tab-pane" id="@video.Id">
 														@Html.Raw(video.AparatLink)
 													</div>
-												}
-												
-												 
-											</div>
+}
+
+
 										</div>
 									</div>
-									<div class="col-md-4 col-sm-5 col-xs-12">
-										<div class="row no-gutters">
-											<ul class="tg-videotabs tg-haslayout" role="tablist">
-												
-												@foreach (var video in Model.Videos)
-												{
+								</div>
+								<div class="col-md-4 col-sm-5 col-xs-12">
+									<div class="row no-gutters">
+										<ul class="tg-videotabs tg-haslayout" role="tablist">
+
+											@foreach (var video in Model.Videos)
+											{
 													<li role="presentation" class="tab-selector">
 														<a href="#@video.Id" aria-controls="vid1" role="tab" data-toggle="tab">
 															<figure>
@@ -231,93 +228,100 @@
 															</figure>
 														</a>
 													</li>
-												}
-											</ul>
-										</div>
+}
+										</ul>
 									</div>
 								</div>
-							</section>
+							</div>
+						</section>
 
-								<div class="tg-shop tg-haslayout">
-									<div class="tg-sectionheading">
-										<h2>محصولات</h2>
-									</div>
-									<div class="row">
-										
-										@foreach (var product in Model.HomeProduct)
-										{
-											<div class="col-md-3 col-sm-6 col-xs-6 tg-shop-width">
-												<div class="tg-products tg-haslayout">
-													<figure class="tg-product">
-														<img src="@product.ImageUrl" alt="@product.Title">
-														<figcaption class="tg-producthover">
-															<ul>
-																<li><a href="/product/@product.UrlParam"><i class="fa fa-shopping-cart"></i></a></li>
-																<li><a href="/product/@product.UrlParam"><i class="fa fa-eye"></i></a></li>
-															</ul>
-														</figcaption>
-													</figure>
-													<div class="tg-product-info">
-														<h3><a href="/product/@product.UrlParam">@product.Title</a></h3>
-														<div class="tg-product-bottom">
-															
-															@if (product.IsInPromotion)
-															{
+						<div class="tg-shop tg-haslayout">
+							<div class="tg-sectionheading">
+								<h2>محصولات</h2>
+							</div>
+							<div class="row">
+
+								@foreach (var product in Model.HomeProduct)
+								{
+										<div class="col-md-3 col-sm-6 col-xs-6 tg-shop-width">
+											<div class="tg-products tg-haslayout">
+												<figure class="tg-product">
+													<img src="@product.ImageUrl" alt="@product.Title">
+													<figcaption class="tg-producthover">
+														<ul>
+															<li><a href="/product/@product.UrlParam"><i class="fa fa-shopping-cart"></i></a></li>
+															<li><a href="/product/@product.UrlParam"><i class="fa fa-eye"></i></a></li>
+														</ul>
+													</figcaption>
+												</figure>
+												<div class="tg-product-info">
+													<h3><a href="/product/@product.UrlParam">@product.Title</a></h3>
+													<div class="tg-product-bottom">
+
+														@if (product.IsInPromotion)
+														{
 																<del>
 																	@product.AmountStr تومان
 																</del>
-																<span >
+																<span>
 																	@product.DiscountAmountStr تومان
 																</span>
-															}
-															else
-															{
+}
+														else
+														{
 																<span>
 																	@product.AmountStr تومان
 																</span>
-															}
+}
 
 
-														</div>
 													</div>
 												</div>
 											</div>
-						 
-										}
-								
+										</div>
 
-									</div>
-									<div class="text-center">
-										<a href="/category" class="btn btn-success">مشاهده محصولات بیشتر</a>
-									</div>
-								</div>
+								}
 
-					 
-							
 
+							</div>
+							<div class="text-center">
+								<a href="/category" class="btn btn-success">مشاهده محصولات بیشتر</a>
 							</div>
 						</div>
 
+
+
+
 					</div>
 				</div>
+
 			</div>
+		</div>
+	</div>
 
-		</main>
+</main>
 
 
-	
+
+
+
+@section scripts{
+	<script>
+		$(document).ready(function () {
+			$('.tg-technologypost .tg-tab-content .tab-pane:first-child').addClass('active');
+			$('#tg-technologypost .tab-selector:first-child').addClass('active');
+
+			//video activation first child
+			$('.tab-content .tab-pane:first-child').addClass('active');
+			$('.tg-videotabs .tab-selector:first-child').addClass('active');
+
+
+//or however you get a handle to the IMG
+			var width = $('.slideImg').width;
+			var height = $('.slideImg:first-child').height;
+
+			console.log(height);
+		});
+	</script>
  
-
-	@section scripts{
-		<script>
-			$(document).ready(function() {
-				$('.tg-technologypost .tg-tab-content .tab-pane:first-child').addClass('active');
-				$('#tg-technologypost .tab-selector:first-child').addClass('active');
-
-				//video activation first child
-				$('.tab-content .tab-pane:first-child').addClass('active');
-				$('.tg-videotabs .tab-selector:first-child').addClass('active');
-
-			});
-		</script>
-	}
+}

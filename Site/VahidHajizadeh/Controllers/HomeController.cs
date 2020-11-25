@@ -17,7 +17,7 @@ namespace VahidHajizadeh.Controllers
             HomeViewModel home = new HomeViewModel()
             {
                 HomeProduct = db.Products.Where(c => c.IsDeleted == false && c.IsActive && c.IsInHome).OrderByDescending(c=>c.CreationDate).Take(8).ToList(),
-                Blogs = db.SiteBlogs.Where(c => c.IsDeleted == false && c.IsActive).OrderByDescending(c => c.CreationDate).Take(4).ToList(),
+                Blogs = db.SiteBlogs.Where(c => c.IsDeleted == false && c.IsActive).OrderByDescending(c => c.CreationDate).Take(8).ToList(),
                 MenuProductGroups = BaseViewModelHelper.GetMenuProductGroup(),
                 footerBlogs = BaseViewModelHelper.GetFooterBlogs(),
                 MenuBlogGroups = BaseViewModelHelper.GetMenuBlogGroup(),

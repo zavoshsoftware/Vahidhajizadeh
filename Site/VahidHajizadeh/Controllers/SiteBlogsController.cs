@@ -215,7 +215,7 @@ namespace VahidHajizadeh.Controllers
 
             if (siteBlog == null)
                 return RedirectPermanent("/blog");
-
+           
 
             BlogDetailViewModel blog = new BlogDetailViewModel()
             {

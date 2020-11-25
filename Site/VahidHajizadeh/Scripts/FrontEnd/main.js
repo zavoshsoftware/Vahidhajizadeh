@@ -342,7 +342,7 @@ $(document).ready(function () {
 	$(".photosgallery-vertical").sliderkit({
 		circular: true,
 		shownavitems: 6,
-		freeheight:true,
+		freeheight:false,
 		verticalnav:true,
 		navclipcenter: true,
 		auto:true,

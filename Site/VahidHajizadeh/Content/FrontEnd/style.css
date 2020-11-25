@@ -809,7 +809,7 @@ nav.greedy ul.hidden-links > li.active:before{
 .photosgallery-vertical{
 	width: 100%;
 	float: left;
-	height: 600px;
+	height:495px;
 }
 .photosgallery-vertical .sliderkit-panel{
 	width: 100%;
@@ -817,7 +817,8 @@ nav.greedy ul.hidden-links > li.active:before{
 	height: 100%;
 }
 .sliderkit img{
-	height: 100%;
+	width: 100%;
+    min-height: 495px;
 }
 .photosgallery-vertical .sliderkit-nav-clip ul li{
 	width: 100% !important;
@@ -834,7 +835,7 @@ nav.greedy ul.hidden-links > li.active:before{
     }
 .photosgallery-vertical .sliderkit-nav {
 	width: 400px;
-	height: 600px;
+	height:495px;
 	top: 0;
 	right: 0;
 	left: auto;
@@ -3729,11 +3730,6 @@ body, p, a, h1, h2, h3, h4, h5, h6, ul, li, input, button, table, th, td, ins, d
     direction: rtl;
 }
 
-
-
-
-
-
-
-
-
+.photosgallery-vertical .sliderkit-nav-clip ul li img {
+    min-height: 0!important;
+}
