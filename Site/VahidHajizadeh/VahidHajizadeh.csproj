@@ -206,6 +206,7 @@
     <Content Include="Content\FrontEnd\sliderkit-demos.css" />
     <Content Include="Content\FrontEnd\sliderkit-site.css" />
     <Content Include="Content\FrontEnd\slideshow.css" />
+    <Content Include="Content\FrontEnd\style-contact.css" />
     <Content Include="Content\FrontEnd\style.css" />
     <Content Include="Content\FrontEnd\transition.css" />
     <Content Include="Content\kendo\2017.3.913\Black\editor.png" />
@@ -1213,6 +1214,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContactUsFormsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageBrowserController.cs" />
     <Compile Include="Controllers\OrderDetailsController.cs" />
@@ -1268,6 +1270,11 @@
     <Compile Include="Migrations\202008061017572_V14.designer.cs">
       <DependentUpon>202008061017572_V14.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101271715197_V15.cs" />
+    <Compile Include="Migrations\202101271715197_V15.designer.cs">
+      <DependentUpon>202101271715197_V15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\ContactUsForm.cs" />
     <Compile Include="Models\Entities\Slider.cs" />
     <Compile Include="Models\Entities\Video.cs" />
     <Compile Include="Startup.cs" />
@@ -1324,6 +1331,7 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\OrderDetailViewModel.cs" />
     <Compile Include="ViewModels\OrderListViewModel.cs" />
+    <Compile Include="ViewModels\ContactViewModel.cs" />
     <Compile Include="ViewModels\ProductListViewModel.cs" />
     <Compile Include="ViewModels\ProductDetailViewModel.cs" />
     <Compile Include="ViewModels\_BaseViewModel.cs" />
@@ -1491,6 +1499,12 @@
     <Content Include="Views\OrderDetails\Edit.cshtml" />
     <Content Include="Views\OrderDetails\Index.cshtml" />
     <Content Include="Views\Shop\CallBackFree.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\ContactUsForms\Create.cshtml" />
+    <Content Include="Views\ContactUsForms\Delete.cshtml" />
+    <Content Include="Views\ContactUsForms\Details.cshtml" />
+    <Content Include="Views\ContactUsForms\Edit.cshtml" />
+    <Content Include="Views\ContactUsForms\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1553,6 +1567,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008061017572_V14.resx">
       <DependentUpon>202008061017572_V14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101271715197_V15.resx">
+      <DependentUpon>202101271715197_V15.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

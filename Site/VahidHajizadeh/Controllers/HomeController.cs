@@ -28,6 +28,47 @@ namespace VahidHajizadeh.Controllers
             };
             return View(home);
         }
- 
+
+        [AllowAnonymous]
+        public List<ProductGroupItemViewModel> GetSideBarProductGroups()
+        {
+            List<ProductGroup> productGroups = db.ProductGroups.Where(c => c.IsDeleted == false && c.IsActive)
+                .OrderBy(c => c.Code).ToList();
+
+            List<ProductGroupItemViewModel> productGroupList = new List<ProductGroupItemViewModel>();
+
+            foreach (ProductGroup productGroup in productGroups)
+            {
+                productGroupList.Add(new ProductGroupItemViewModel()
+                {
+                    ProductGroup = productGroup,
+                    Quantity = db.Products.Count(c => c.ProductGroupId == productGroup.Id && c.IsDeleted == false && c.IsActive)
+                });
+            }
+
+            return productGroupList;
+        }
+
+        [AllowAnonymous]
+        [Route("contact")]
+        public ActionResult Contact()
+        {
+
+
+
+
+            ContactViewModel result = new ContactViewModel()
+            {
+                MenuProductGroups = BaseViewModelHelper.GetMenuProductGroup(),
+              
+                MenuBlogGroups = BaseViewModelHelper.GetMenuBlogGroup(),
+                footerBlogs = BaseViewModelHelper.GetFooterBlogs(),
+                SideBarProductGroups = GetSideBarProductGroups(),
+                SideBarProducts = db.Products.Where(c => c.IsInHome && c.IsDeleted == false && c.IsActive).Take(3).ToList(),
+                SideBarBlogs = db.SiteBlogs.Where(c => c.IsDeleted == false && c.IsActive).OrderByDescending(c => c.CreationDate).Take(3).ToList()
+            };
+            return View(result);
+        }
+
     }
 }

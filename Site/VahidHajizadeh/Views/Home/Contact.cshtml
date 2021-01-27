@@ -1,0 +1,189 @@
+﻿@model ViewModels.ContactViewModel
+@{
+		ViewBag.Title = "تماس با وحید حاجی زاده";
+}
+@section scripts
+{
+
+	<link href="~/Content/FrontEnd/style-contact.css" rel="stylesheet" />
+	
+	<script>
+		function SubmitContactUs() {
+
+			var nameVal = $("#commentName").val();
+			var cellNumber = $("#commentCellNumber").val();
+			var bodyVal = $("#commentBody").val();
+			if (nameVal !== "" && cellNumber !== "" && bodyVal !== "") {
+				$.ajax(
+					{
+						url: "/ContactUsForms/SubmitComment",
+						data: { name: nameVal, cellNumber: cellNumber, body: bodyVal },
+						type: "POST"
+					}).done(function (result) {
+					if (result === "true") {
+						$("#errorDivContact").css('display', 'none');
+						$("#SuccessDivContact").css('display', 'block');
+					} 
+				});
+			}
+			else {
+				$("#errorDivContact").html('تمامی فیلد های بالا را تکمیل نمایید.');
+				$("#errorDivContact").css('display', 'block');
+				$("#SuccessDivContact").css('display', 'none');
+
+			}
+		}
+	</script>
+}
+
+
+<div class="tg-banner tg-haslayout parallax-window" data-parallax="scroll" data-bleed="100" data-speed="0.2" data-image-src="/images/header.jpg">
+	<div class="tg-displaytable">
+		<div class="tg-displaytablecell">
+			<div class="container">
+				<h3>تماس با من</h3>
+				<ol class="tg-breadcrumb">
+					<li><a href="#">خانه</a></li>
+
+					<li>تماس با من</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+
+<main class="main-content tg-haslayout">
+	<div id="tg-two-columns" class="tg-two-columns tg-haslayout">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9 col-sm-8 col-xs-12 pull-left">
+					<div id="content" class="content tg-haslayout">
+						<div class="tg-shop tg-haslayout">
+							<div class="tg-sectionheading">
+								<h2>تماس با وحید حاجی زاده</h2>
+							</div>
+							<div class="row contact-info">
+								<div class="col-md-12">
+
+									<ul>
+										<li><i class="fa fa-location-arrow"></i><b>آدرس:</b> تهران، خیابان شریعتی، سه راه طالقانی، جنب مبل پایتخت، پلاک 306، طبقه 2، واحد 4</li>
+										<li> <i class="fa fa-phone"></i><b>تلفن:</b> 021-77515152</li>
+										<li><i class="fa fa-fax"></i><b>فکس:</b> 021-89784350</li>
+										<li><i class="fa fa-envelope"></i><b>ایمیل:</b> info@vahidhajizadeh.com</li>
+										<li> <i class="fa fa-mobile"></i><b>پشتیبانی واتس اپ و تلگرام:</b> 09025455416</li>
+									</ul>
+
+								</div>
+							</div>
+							<div class="tg-sectionheading">
+								<h2>ارسال پیام</h2>
+							</div>
+							<div class="tg-contact-us-form tg-haslayout">
+								<div class="tg-form-contact tg-haslayout">
+									<fieldset>
+										<div class="row">
+
+											<div class="col-md-6 col-sm-12">
+												<div class="form-group">
+													<input type="text" id="commentCellNumber" class="form-control" placeholder="تلفن تماس*">
+												</div>
+											</div>
+
+											<div class="col-md-6 col-sm-12">
+												<div class="form-group">
+													<input type="text" id="commentName" class="form-control" placeholder="نام و نام خانوادگی*">
+												</div>
+											</div>
+
+											<div class="col-sm-12">
+												<div class="form-group">
+													<textarea placeholder="پیغام خود را در اینجا وارد کنید" class="form-control" id="commentBody"></textarea>
+												</div>
+											</div>
+											<div class="col-sm-12">
+												<button class="tg-btn" type="button" onclick="SubmitContactUs();"><span>ارسال پیام</span></button>
+											</div>
+											<div class="col-sm-12">
+											<div class="alert alert-danger" id="errorDivContact"></div>
+											<div class="alert alert-success" id="SuccessDivContact">پیام شما با موفقیت ثبت گردید و در اسرع وقت به آن رسیدگی خواهد شد.</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<aside id="tg-sidebar" class="tg-sidebar">
+					<div class="col-md-3 col-sm-4 col-xs-12 pull-right">
+
+						<div class="tg-widget tg-catagorieswidget">
+							<div class="tg-sectionheading">
+								<h2>گروه محصولات</h2>
+							</div>
+							<ul>
+								@foreach (var productGroup in Model.SideBarProductGroups)
+								{
+										<li><a href="/category/@productGroup.ProductGroup.UrlParam"><em>@productGroup.ProductGroup.Title</em><i>@productGroup.Quantity</i></a></li>
+
+								}
+
+							</ul>
+						</div>
+						<div class="tg-widget tg-addwidget">
+							<div class="tg-add">
+								<a href="#"><img src="/images/aside-add-img1.jpg" alt="image description"></a>
+							</div>
+						</div>
+						<div class="tg-widget tg-wishlist-widget">
+							<div class="tg-sectionheading">
+								<h2>محصولات پر فروش</h2>
+							</div>
+							<ul>
+								@foreach (var product in Model.SideBarProducts)
+								{
+										<li>
+											<figure>
+												<img src="@product.ImageUrl" alt="@product.Title" height="60px">
+												<figcaption class="tg-producthover">
+													<a href="/category/@product.UrlParam"><i class="fa fa-eye"></i></a>
+												</figcaption>
+											</figure>
+											<div class="tg-product-info sidebar-item">
+												<h3>
+													<a href="/category/@product.UrlParam">@product.Title</a>
+												</h3>
+												<em>@product.AmountStr تومان</em>
+												<a class="tg-addtocart" href="#">افزودن به سبد خرید</a>
+											</div>
+										</li>
+								}
+
+							</ul>
+						</div>
+
+						<div class="tg-widget tg-sliderwidget">
+							<div id="tg-widget-slider" class="tg-widget-slider tg-shopslider-widget">
+
+								@foreach (var blog in Model.SideBarBlogs)
+								{
+										<div class="item">
+											<figure>
+												<a href="/blog/post/@blog.UrlParam"><img src="@blog.ImageUrl" alt="@blog.Title" height="187px"></a>
+											</figure>
+											<h3><a href="/blog/post/@blog.UrlParam">@blog.Title</a></h3>
+										</div>
+								}
+
+
+							</div>
+						</div>
+
+					</div>
+				</aside>
+
+			</div>
+		</div>
+	</div>
+</main>

@@ -31,5 +31,6 @@ namespace Models
         public DbSet<SiteBlogImage> SiteBlogImages { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Video> Videos { get; set; }
+        public DbSet<ContactUsForm> ContactUsForms { get; set; }
     }
 }
